@@ -1,0 +1,106 @@
+HOOKS
+
+--ngOnChanges()
+when decorator's (like @Input) value changes, this runs
+called whenever one or more input properties of a component change. 
+It receives a SimpleChanges object that contains information about the changed properties.
+
+--ngOnInit()
+when initialization of constructor is complete, this runs.
+if we want to run anything after init. we should define features in function.
+can call the function and the code runs after init.
+It is called after Angular has initialized all data-bound properties of a directive. 
+It's a good place to perform component initialization, retrieve data from a service, or set up subscriptions.
+
+--ngDoCheck()
+when object created first constructor runs.
+the object is in view and reference doesn't change.
+when a button is clicked and click is defined in ts, ngDoCheck() executes
+that is when event is triggered, hook works. 
+expensive hook
+
+--ngAfterContentInit()
+//ngContent is content inside <app-sample><>
+view won't be created as soon as constructor runs, a delay exist
+called after Angular has finished initializing all content in the component's view.
+
+--ngAfterContentChecked()
+trigger when content value reached
+This hook is triggered after the content (including projected content or content inside <ng-content>) has been checked.
+
+--ngAfterViewInit()
+hook for running code after the view is created.
+hook is called after the component's view has been fully initialized. 
+It's often used for performing additional setup that requires the view to be initialized.
+
+--ngAfterViewChecked()
+hook is called after every check of the component's view and its children. 
+always run view init of the childrens after the parent's is finished.
+It's useful for performing additional actions after the view has been checked, such as updating the UI based on changes.
+
+--ngOnDestroy()
+just before destroying this code should run
+hook is called just before Angular destroys the component. 
+//Subscribe means to listen to another component. The subscriber wont be garbage collected until the listening is stopped
+It's used for cleanup activities like unsubscribing from observables to avoid memory leaks.
+
+--ngTemplate
+<app-component-one
+  *ngIf="title; else tempPara"
+  [sampleInput]="'hello'"
+></app-component-one>
+<ng-template #tempPara> Else </ng-template>
+<button (click)="toggleButton()">Toggle Button</button>
+
+--#template
+template reference variable can get the values inside the input fields (can pass values to ts)
+allow you to create a reference to a DOM element, directive, or component in your template and then access it in your component's code. 
+
+<input #myInput type="text">
+<button (click)="logInputValue(myInput.value)">Log Input Value</button>
+
+in TS
+logInputValue(value: string): void {
+    console.log('Input value:', value);
+  }
+
+--@viewChild
+it is a decorator, so it is dependant on lifecycle hooks
+we can pass template reference variable in viewChild
+if value passed through button click it will take time since views are done first
+if in viewChild, since it is related to hooks, it can be received easier
+
+inputValue.nativeElement.value
+
+<input #inputField type="text">
+<button (click)="logInputValue()">Log Input Value</button>	//in html
+
+logInputValue(): void {
+    if (this.inputField) {
+      console.log('Input value:', this.inputField.nativeElement.value);	//in ts
+    }
+
+--@viewChildren
+if we want to access multiple tags.
+the values will be in the form of array
+
+--@ContentChild
+ tool used by a parent component to find and interact with a specific child component or directive (nfIf, ngFor) hiding inside its content.
+
+--@ContentChildren
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Services
+
+Services are used to encapsulate and provide functionality that can be shared across components, directives, and other services within application.
+Service is a ts file
+It is intantiated inside module.ts and only one instance is for all the pgm
+so if we change one value, it is applied throughout the pgm
+@Injectible({providedIn: 'root',}) makes the service values throughout the application components
+
+ng g s user -> user service.ts
+
+go to component ts and create a constructor with private UserService:UserService
+then use it to store to value
+
+then use the component decorator and print the value in html
