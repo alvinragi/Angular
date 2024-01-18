@@ -1,0 +1,7 @@
+<app-component-one
+  *ngIf="title; else tempPara"
+  [sampleInput]="'hello'"
+></app-component-one>
+<ng-template #tempPara> Destroyed! </ng-template>
+<button (click)="toggleButton()">Toggle Button</button>
+<!-- if the button is inside the child, it will also be destroyed! -->
