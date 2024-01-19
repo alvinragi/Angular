@@ -1,0 +1,81 @@
+we use @injectible 'root'
+if we put service.ts in providers of appmodule.ts, a new instance is created. If done like that, we won't get the chnages reflected, because its a new instance
+
+we can inject a service inside another service by passing value of service in another service's constructor
+
+----routes
+we pass array of object to routes
+path and component are the two items inside the array
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+ { path: 'about', component: AboutComponent }, ]
+we also need a target where the component should be loaded - routerOutlet
+we define the routerOutlet in html
+
+
+if we provide an invalid path, we use wildcard to handle it.
+wild card route should always be at the end
+when we use any tag, we define the routerlink where it should be directed
+we may also add class when we click the link
+
+nested routing?? using children in routes
+adding id to routes
+
+----promises
+
+promises handle asynch calls
+fetch is a web API : - fetch.url
+we use RxJs (a library)
+when stream of data comes, we will take it in group of packets
+when the listener is dead (the promise is also lost), the stream of data still continues, which cause memory leaks
+RxJs use observables and subscribers to send these packets (map and filter function of RxJs is used)
+So if the subscribers are absent, the data is not sent.
+
+api call will always be in a service
+
+import httpclientmodule in app.module.ts in first import place and ngmodule imports list.
+
+dotnet add package Microsoft.AspNetCore.Cors
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularDev",
+        builder => builder.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
+});
+
+app.UseCors("AllowAngularDev");
+
+[EnableCors("AllowAngularDev")]	//decorator to be put in the controller from where data is fetched
+---------------------------------------------
+passing functions dynamically through input
+
+in appcomponent.html
+<app-sample [clickFunction]="dynamicButtonFunction"></app-sample>
+
+in appcomponent.ts
+export class AppComponent {
+  dynamicButtonFunction() {
+    console.log('Button clicked!');
+  }
+}
+
+in samplecomponent.html
+create button
+<button (click)="getUsers()">Click me</button>
+
+in samplecomponent.ts
+export class SampleComponent {
+  @Input() clickFunction: () => void;
+
+  getUsers() {
+    // Check if the clickFunction exists before executing it
+    if (this.clickFunction) {
+      this.clickFunction();
+    }
+  }
+
+
+
