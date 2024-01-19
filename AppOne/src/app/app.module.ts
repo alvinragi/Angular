@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentOneComponent } from './H00Ks_Demo/component-one/component-one.component';
@@ -12,6 +12,7 @@ import { RouteParentComponent } from './Routing_Demo/route-parent/route-parent.c
 import { RouterModule, Routes } from '@angular/router';
 import { ContentComponent } from './Routing_Demo/content/content.component';
 import { SampleComponent } from './Routing_Demo/sample/sample.component';
+import { FirstapiComponent } from './APIGet_Demo/firstapi/firstapi.component';
 
 
 export const routes:Routes = [
@@ -31,11 +32,14 @@ export const routes:Routes = [
     RouteParentComponent,
     ContentComponent,
     SampleComponent,
+    FirstapiComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
