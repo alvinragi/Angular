@@ -14,7 +14,7 @@ import { ContentComponent } from './Routing_Demo/content/content.component';
 import { SampleComponent } from './Routing_Demo/sample/sample.component';
 
 export const routes:Routes = [
-  {component:ContentComponent, path:"content"},
+  {component:ContentComponent, path:"content/:id"},
   {component:SampleComponent, path:"sample"},
   {component:SampleComponent, path:"**"}
 ]

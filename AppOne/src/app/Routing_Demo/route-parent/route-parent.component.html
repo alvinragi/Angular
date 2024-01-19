@@ -1,5 +1,6 @@
-<p>route-parent works!</p>
+<p>route-parent html</p>
 <router-outlet></router-outlet>
+<!-- the router outlet loads the first -->
 
 <ul style="list-style: none">
   <a
@@ -8,14 +9,15 @@
     routerLinkActive=""
     [routerLinkActiveOptions]="{ exact: true }"
   >
-    This is sample</a
+    Click to redirect to Sample</a
   >
   <a
-    routerLink="content"
+    routerLink="content/123"
     style="cursor: pointer; width: fit-content; display: block"
     routerLinkActive=""
     [routerLinkActiveOptions]="{ exact: true }"
   >
-    This is content</a
+    Click to redirect to Content</a
   >
+  <!-- The id defined can be recieved through the params to get the value -->
 </ul>
