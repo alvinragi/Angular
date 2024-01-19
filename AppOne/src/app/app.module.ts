@@ -13,9 +13,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContentComponent } from './Routing_Demo/content/content.component';
 import { SampleComponent } from './Routing_Demo/sample/sample.component';
 
+
 export const routes:Routes = [
-  {component:ContentComponent, path:"content/:id"},
-  {component:SampleComponent, path:"sample"},
+  {component:ContentComponent, path:"content"},
+  {component:SampleComponent, path:"sample/:id"},
   {component:SampleComponent, path:"**"}
 ]
 
