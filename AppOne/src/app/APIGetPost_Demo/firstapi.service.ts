@@ -13,4 +13,7 @@ export class FirstapiService {
   getData(): Observable<any>{
     return this.http.get('https://localhost:7160/api/ForumStatus');
   }
+  postData(data:string): Observable<any>{
+    return this.http.post(`https://localhost:7160/api/ForumCategory/${data}`, data);
+  }
 }

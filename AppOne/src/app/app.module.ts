@@ -15,7 +15,8 @@ import { SampleComponent } from './Routing_Demo/sample/sample.component';
 import { FirstapiComponent } from './APIGet_Demo/firstapi/firstapi.component';
 import { ParentComponent } from './DynamicButtonClick_Demo/parent/parent.component';
 import { ChildComponent } from './DynamicButtonClick_Demo/child/child.component';
-import { FormComponent } from './form/form.component';
+import { FormComponent } from './FormValidation_Demo/form/form.component';
+
 
 
 export const routes:Routes = [
@@ -37,8 +38,6 @@ export const routes:Routes = [
     SampleComponent,
     FirstapiComponent,
     FormComponent,
-    
-
   ],
   imports: [
     BrowserModule,

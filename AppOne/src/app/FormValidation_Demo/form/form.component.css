@@ -1,15 +1,16 @@
 /* Add your own styles here */
 
-form {
+.styled-form {
   max-width: 400px;
   margin: auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
   border-radius: 5px;
 }
 
-div {
-  margin-bottom: 15px;
+.form-group {
+  margin-bottom: 20px;
 }
 
 label {
@@ -18,20 +19,29 @@ label {
   font-weight: bold;
 }
 
-input {
+.input {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
-span {
-  color: red;
-  font-size: 12px;
+.address-group {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 15px;
 }
 
-button {
+.error-message {
+  color: red;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
+.submit-button {
   background-color: #4caf50;
   color: white;
   padding: 10px 15px;
@@ -40,6 +50,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.submit-button:hover {
   background-color: #45a049;
 }

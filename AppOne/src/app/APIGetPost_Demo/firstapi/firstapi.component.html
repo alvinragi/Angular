@@ -1,0 +1,22 @@
+<!-- <button (click)="getAPIData()">
+  Click here to generate get data in console
+</button> -->
+
+<form [formGroup]="form" (ngSubmit)="buttonClick()" class="styled-form">
+  <div class="form-group">
+    <label for="data">Enter new Community category name:</label>
+    <input
+      type="text"
+      formControlName="data"
+      placeholder="Enter data to be sent"
+      class="form-control"
+    />
+    <span
+      *ngIf="form.get('data')?.invalid && form.get('data')?.touched"
+      class="error-message"
+    >
+      Data is required!
+    </span>
+  </div>
+  <button type="submit">Post</button>
+</form>

@@ -15,6 +15,13 @@ export class FormComponent {
     this.form = new FormGroup({
       firstName: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
+
+      address: new FormGroup({
+        street: new FormControl('',Validators.required),
+        city: new FormControl('',Validators.required),
+        postalCode: new FormControl('',Validators.required),
+      })
+      //we use group so we can target a group of values
     });
   }
 

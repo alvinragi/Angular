@@ -1,0 +1,9 @@
+-----forms
+
+form control is created using name, and it will give us some properties.
+if we never clicked on form fields, the state of the forms tells us whether it is touched(clcked) or not.
+if input field is typed on, it becomes dirty
+
+we use the form validation in ngOnInit()
+form control, form group
+regex for phone number validation
