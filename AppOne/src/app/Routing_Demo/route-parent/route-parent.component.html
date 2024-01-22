@@ -1,22 +1,10 @@
 <p>route-parent html</p>
-<router-outlet></router-outlet>
-<!-- the router outlet loads the first -->
 
 <ul style="list-style: none">
-  <a
-    routerLink="sample/123"
-    style="cursor: pointer; display: block"
-    routerLinkActive=""
-    [routerLinkActiveOptions]="{ exact: true }"
-  >
-    Click to redirect to Sample</a
-  >
-  <a
-    routerLink="content"
-    style="cursor: pointer; width: fit-content; display: block"
-    routerLinkActive=""
-    [routerLinkActiveOptions]="{ exact: true }"
-  >
-    Click to redirect to Content</a
-  >
+  <li>
+    <button (click)="navigateToSample()">Click to redirect to Sample</button>
+  </li>
+  <li>
+    <button (click)="navigateToContent()">Click to redirect to Content</button>
+  </li>
 </ul>

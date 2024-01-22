@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-route-parent',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./route-parent.component.css']
 })
 export class RouteParentComponent {
+  constructor(private router: Router) {}
 
+  navigateToSample() {
+    this.router.navigate(['route-parent', 'sample', '123']);
+  }
+
+  navigateToContent() {
+    this.router.navigate(['route-parent', 'content']);
+  }
 }
