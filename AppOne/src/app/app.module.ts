@@ -8,11 +8,14 @@ import { ComponentTwoComponent } from './H00Ks_Demo/component-two/component-two.
 import { ComponentParentComponent } from './H00Ks_Demo/component-parent/component-parent.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContentComponent } from './Routing_Demo/content/content.component';
-import { RouterModule, Routes } from '@angular/router';
 import { SampleComponent } from './Routing_Demo/sample/sample.component';
 import { RouteParentComponent } from './Routing_Demo/route-parent/route-parent.component';
 import { FormComponent } from './FormValidation_Demo/form/form.component';
-
+import { HomeComponent } from './RoutingSubscription_Demo/home/home.component';
+import { LoginComponent } from './RoutingSubscription_Demo/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { LoginPageComponent } from './ser-rou-auth/login-page/login-page.component';
+import { HomePageComponent } from './ser-rou-auth/home-page/home-page.component';
 
 
 @NgModule({
@@ -25,12 +28,17 @@ import { FormComponent } from './FormValidation_Demo/form/form.component';
     ContentComponent,
     SampleComponent,
     FormComponent,
+    HomeComponent,
+    LoginComponent,
+    LoginPageComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

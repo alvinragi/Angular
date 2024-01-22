@@ -1,0 +1,35 @@
+<form [formGroup]="form" class="styled-form">
+  <div class="form-group">
+    <label for="firstName">First Name:</label>
+    <input
+      type="text"
+      formControlName="firstName"
+      placeholder="Enter First Name"
+      class="form-control"
+    />
+    <span
+      *ngIf="form.get('firstName')?.invalid && form.get('firstName')?.touched"
+      class="error-message"
+    >
+      Enter first name
+    </span>
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input
+      type="text"
+      formControlName="password"
+      placeholder="Enter Password"
+      class="form-control"
+    />
+    <span
+      *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+      class="error-message"
+    >
+      Enter a valid email address
+    </span>
+  </div>
+  <button [disabled]="form.invalid" type="submit-button" (click)="login()">
+    Login
+  </button>
+</form>
