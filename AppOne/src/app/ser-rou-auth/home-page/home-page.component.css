@@ -1,0 +1,20 @@
+.welcome-container {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  background-color: #e39b9b;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-heading {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.username-text {
+  color: #555;
+  font-size: 18px;
+}

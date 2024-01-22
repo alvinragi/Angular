@@ -6,6 +6,7 @@ import { UserListService } from './user.service';
 })
 export class ListService {
   private listUserService: UserListService;
+  isLoggedIn:boolean = false;
 
   constructor(l_Service: UserListService) {
     this.listUserService = l_Service;
@@ -16,6 +17,13 @@ export class ListService {
       user.firstname === inUser.inputName && user.password === inUser.inputPass
     );
 
+    if (foundUser){
+      this.isLoggedIn = true;
+    }
+    else{
+      this.isLoggedIn = false;
+    }
+    
     return foundUser !== undefined; // Returns true if a user is found, false otherwise
   }
 }
