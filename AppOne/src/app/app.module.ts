@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentOneComponent } from './H00Ks_Demo/component-one/component-one.component';
@@ -16,6 +16,9 @@ import { LoginComponent } from './RoutingSubscription_Demo/login/login.component
 import { FormsModule } from '@angular/forms';
 import { LoginPageComponent } from './ser-rou-auth/login-page/login-page.component';
 import { HomePageComponent } from './ser-rou-auth/home-page/home-page.component';
+import { ResolveChildComponent } from './Resolve_Demo/resolve-child/resolve-child.component';
+import { ResolveParentComponent } from './Resolve_Demo/resolve-parent/resolve-parent.component';
+import { HttpinterceptorService } from './userIntrfc.service';
 
 
 @NgModule({
@@ -32,6 +35,9 @@ import { HomePageComponent } from './ser-rou-auth/home-page/home-page.component'
     LoginComponent,
     LoginPageComponent,
     HomePageComponent,
+    ResolveChildComponent,
+    ResolveParentComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,12 @@ import { HomePageComponent } from './ser-rou-auth/home-page/home-page.component'
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpinterceptorService,
+      multi: true,
+    },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
