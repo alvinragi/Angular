@@ -19,7 +19,7 @@ import { HomePageComponent } from './ser-rou-auth/home-page/home-page.component'
 import { ResolveChildComponent } from './Resolve_Demo/resolve-child/resolve-child.component';
 import { ResolveParentComponent } from './Resolve_Demo/resolve-parent/resolve-parent.component';
 import { HttpinterceptorService } from './userIntrfc.service';
-
+import { SetBackground } from './Resolve_Demo/resolve-child/setbackground.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +37,7 @@ import { HttpinterceptorService } from './userIntrfc.service';
     HomePageComponent,
     ResolveChildComponent,
     ResolveParentComponent,
+    SetBackground,
     
   ],
   imports: [
@@ -45,6 +46,7 @@ import { HttpinterceptorService } from './userIntrfc.service';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    
   ],
   providers: [
     {

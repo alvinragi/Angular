@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {  ResolveListService } from '../resolve-child/users.service';
 import { ActivatedRoute } from '@angular/router';
-
+import { SetBackground } from '../resolve-child/setbackground.directive';
 @Component({
   selector: 'app-resolve-parent',
   templateUrl: './resolve-parent.component.html',
