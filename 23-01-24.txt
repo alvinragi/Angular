@@ -1,0 +1,32 @@
+control = new FormControl('');
+onChange(value:string){}
+onTouched(){}
+onWrite(){}
+
+registerOnChange(registerChange) :void{	//can give any name
+this.onChange = registerChange;		//refering the above function => when lhs called, rhs runs
+}
+registerOnTouched(registerTouch) :void{
+this.onTouched = registerTouch;
+}
+onInput(){
+this.onChange(this.control.value)}
+writeValue(value):void{
+this.control.setValue(value);
+
+
+
+declare a form, a component with input field.
+give form control name to each component
+in its ts file, we create form and validators
+reference it in html
+inside app input, we set path of input
+immplement control value accessor
+it gives accessories like register on change (when element changes), registerontouched(when element touched)
+bind the new functions to the html
+
+forwardRef()
+------------------------------------------
+
+interceptor subscribes (its also an observable)
+sjem reponse comens, so 

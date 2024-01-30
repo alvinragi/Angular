@@ -1,0 +1,11 @@
+ngContent -  to place the passed elements according to our needs in specific positions
+
+ngTemplate (use #template)- won't be displayed on view by default, uses in ngFor, ngIf. when if else statment of other div becomes false, this will be displayed.
+
+ngContainer - instead of using divs for containing, us ngContainer. 
+
+<htmlElement(mainly input,#temp> can emit and get values 	//template reference variable
+
+ngModel
+
+lifecycle hooks - component dont run again, the hook gets called

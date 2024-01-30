@@ -1,0 +1,28 @@
+Routes -  Tracing (for loading screen
+
+-----------------
+---in routing.module
+
+imports - RouterModule.forRoot(routes {
+enableTracing: true;
+})
+
+---in appcomponent.ts
+
+enableLoader = false;
+ngOnInit(){
+this.router.events.subscribe((routeEvent) => {
+if (routeEvent instanceof NavigationStart) {
+this.enableLoader = true;
+} else if (
+routeEvent instanceof NavigationEnd ||
+routeEvent instanceof NavigationCancel ||
+routeEvent instanceof NavigationError
+) {
+this.enableLoader = false;
+}
+});
+
+In summary, this code is used to toggle the state of a loader (enableLoader) based on Angular Router events. The loader is activated when navigation 
+starts and deactivated when navigation ends, cancels, or encounters an error. This is a common pattern to show a loading indicator during route changes 
+in an Angular application.

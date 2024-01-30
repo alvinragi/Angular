@@ -1,0 +1,32 @@
+Javascript
+
+single threaded synchronous language
+call stack and task queue (lifo) (maintain the flow in the stack) in js
+micro task queue (fifo) inside task queue holds the promises and asynch awaits
+event loop monitors the mtq and the task and deposit promises to stack for processing
+
+Typescript is superset of js
+
+ECMA script is who decides the standards of js
+
+Babel in browser provides backend compatiability
+
+jsfiddle
+
+js dont have classes, only prototypes
+
+
+primitive types will be pass by value.
+reference types includes arrays, objects and funtions. Detection of changes are difficult because they change the address location.
+
+object must be immutable, each time when change happens to object (when an api calls or smth) angular wont detect change because its still in the same memory location.
+so we create a new object to detect these changes, also use map or filter
+
+
+
+
+
+bitwise operators
+ternary operators
+type operators
+type coercieon

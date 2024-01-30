@@ -1,0 +1,117 @@
+DOM manipulation in browser is very expensive
+
+
+ngIf
+ngFor
+ngSwitch
+
+<div [ngSwitch]="value">
+  <!-- Property binding [] -->
+  <!-- checks for value in ts file -->
+  <p *ngSwitchCase="1">{{ value }}</p>
+  <p *ngSwitchCase="2">{{ value }}</p>
+  <p *ngSwitchDefault>Default value</p>
+</div>
+
+<div [ngClass]="value === 1 ? 'odd_value' : 'even_value'">
+  <!-- ternanry operation -->
+  <p>Sample Content</p>
+</div>
+
+<div [ngClass]="value === 1 ? 'odd_value' : value === 2 ? 'even_value' : ''">
+  <!-- ternanry operation -->
+  <p>Sample Content</p>
+</div>
+
+<div
+  [ngStyle]="
+    value === 3 ? { color: 'red' } : value === 2 ? { color: 'blue' } : {}
+  "
+>
+  <p>Sample Content</p>
+</div>
+
+
+<div
+  *ngFor="
+    let user of users;
+    let indexValue = index;
+    let firstIndex = first;
+    let totalIndex = count;
+    let lastIndex = last;
+    let evenValue = even;
+    let oddValue = odd
+  "
+>
+
+<tr
+        *ngFor="let user of users; let even = even"
+        [ngClass]="even ? 'even_cell' : 'odd_cell'"
+      >
+
+ngFor gives us the index, first, count and all the RHS attributes
+ngFor also gives values like even and odd
+----------------------------------------------------------------------------
+attribute/property binding: values given inside []
+
+write css classes in snake_case
+----------------------------------------------------------------------------
+named and default exports
+import {data} from './data';
+-------------------------------------------------------------------------
+transfer data from parent to child
+
+in parent component //get data by property binding
+toExportArray:string[] = ["Julia","Gopu","Mufasa"]; 
+
+in child component.ts class
+@Input()  //exposing decorator
+receivedArray: string[] = [];
+
+in child component.ts class
+<app-sample [receivedArray]="toExportArray"></app-sample>
+
+in child component.html class
+<div *ngFor="let name of receivedArray">
+  <p>{{ name }}</p>
+</div>
+--------------------------------------------------------------
+transfer data from child to parent
+---@Output() in childComponent.ts
+
+export class SampleComponent {
+@Output()
+outputValue = new EventEmitter<string>();
+
+sendData(){  
+  this.outputValue.emit('Hello from child')
+}
+}
+
+---in childComponent.html
+<button(click)="sendData()" >Click Me</button>
+(outputValue) = "getDataFromChild($event)"
+
+--in parentComponent.html
+<app-sample (outputValue)="getDataFromChild($event)"></app-sample>
+
+---in parentComponent.ts class
+export class AppComponent {
+  childOutput:string = ""
+  getDataFromChild(event:string){
+    this.childOutput = event;
+  }
+}
+------------------------------------------------------------------
+pipes in angular
+
+<p>{{ "Tom" | lowercase }}</p>
+<p>{{ createdDate | date : "short" }}</p>
+<p>{{ "vincent koko" | titlecase }}</p>
+<p>{{ decimalValue | number : "1.1-4" }}</p>	//rounding numbers
+json pipe also exist to convert json to string
+
+<div *ngFor= "let user of users | slice : 0 : 5">
+<p>{{user.name}}</p>
+</div>							//pipe for slicing
+---------------------------------------------------------------

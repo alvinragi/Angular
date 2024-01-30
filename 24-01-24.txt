@@ -1,0 +1,4 @@
+directives:
+
+has more priority over inline and ngstyle
+when giving directive values, dont give values which have names of nativeElement

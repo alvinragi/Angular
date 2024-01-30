@@ -1,0 +1,25 @@
+ng new project_name- routing yes - css - 
+
+go to the project and to start write 'npm start'
+
+ng add @ng-bootstrap/ng-bootstrap : add this in every project
+
+
+you can create your own component
+
+for creating your own tag it will have a component(ts) and a template(html)
+
+
+<body>
+  <app-root></app-root>
+</body>
+</html>
+
+this approot tag is new. that means it will have a component and a template of the name approot
+
+annotation/decorators?
+tells the details about the component, which ts file to call, which html to call, the css
+
+to use the component we use EXPORT where we also pass the title. so this file can be used/ accessed in the html file
+
+to access the component, we need to use double curly brackets {{  }}

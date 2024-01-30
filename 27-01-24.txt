@@ -1,0 +1,40 @@
+ngclass, attribute binding, directives, getters and setters, hostbinding, hostlistening, 
+
+
+lazy loading, lazy loading routing module.ts, lazymodule.ts do no import to appmodule, we go to app routing module 
+and give import statement, use then and lazy module, specify the routes
+
+
+Lazy Loading
+-----------
+defer the loading of certain modules or components until they are actually needed.
+a way to load modules or routes asynchronously, which can improve the initial loading time of an application
+
+---Create Lazy Module:
+Develop a separate Angular module for lazy loading with its own components, services, and optional routing.
+
+---Define Routes in Lazy Module:
+If needed, specify routes for the lazy-loaded module within the module itself, often in a separate routing module (e.g., lazymodule-routing.module.ts).
+
+---Update App Routing Module:
+In the main app-routing.module.ts, use the loadChildren property to configure routes for the lazy-loaded module.
+Syntax: loadChildren: () => import('./path-to-lazymodule/lazymodule.module').then(m => m.LazyModule)
+
+---Use in Components:
+Incorporate lazy-loaded routes in components or templates as you would with regular routes. Angular handles automatic loading when the route is accessed.
+
+
+
+
+
+Insert Into Replies (reply_id, post_id, parent_reply_id, content) Values (1, 1, null, 'illo cumque rerum nisi laudantium tempore');  
+Insert Into Replies (reply_id, post_id, parent_reply_id, content) Values (2, 1, 1, 'dolorem eum sequi nulla beatae nam');  
+Insert Into Replies (reply_id, post_id, parent_reply_id, content) Values (3, 1, 1, 'similique atque voluptate distinctio veritatis aliquid');  
+Insert Into Replies (reply_id, post_id, parent_reply_id, content) Values (4, 1, 2, 'aspernatur nostrum itaque sapiente expedita voluptate');  
+Insert Into Replies (reply_id, post_id, parent_reply_id, content) Values (5, 1, null, 'magni magni voluptatem mollitia sed unde');  
+Insert Into Replies (reply_id, post_id, parent_reply_id, content) Values (6, 1, null, 'labore eligendi et debitis quaerat temporibus');  
+Insert Into Replies (reply_id, post_id, parent_reply_id, content) Values (7, 1, 5, 'nesciunt voluptate tempora ratione eligendi nihil');  
+Insert Into Replies (reply_id, post_id, parent_reply_id, content) Values (8, 1, 5, 'sit consequuntur autem ex quia sint');  
+Insert Into Replies (reply_id, post_id, parent_reply_id, content) Values (9, 1, 6, 'praesentium quam sint totam temporibus libero');  
+Insert Into Replies (reply_id, post_id, parent_reply_id, content) Values (10, 1, 9, 'similique sequi accusantium dolor quae dolore');  
+

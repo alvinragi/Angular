@@ -1,0 +1,64 @@
+constructor		//dont write any blocking codes
+ngOnChanges
+ngOnInit		//thats why we call api calls/services subscription on ngOnInit
+ngDoCheck
+
+-----------completes init and now starts rendering html view
+
+//if there is another component it starts running and finishing first
+ngAfterContent
+ngAfterContentChecked
+ngAfterViewInit		//only when content comes, view can be init'ed.
+ngAfterViewChecked
+ngOnDestroy
+
+
+
+Parent Component:
+----------------
+Constructor: 
+This is the first method called when an instance of the component is created. 
+It's used for initializing the component and its properties.
+
+OnChanges: 
+This method is called whenever the input properties of the component change. 
+It receives a SimpleChanges object that contains information about the changed properties.
+
+OnInit: 
+This method is called after the constructor and ngOnChanges (if any). 
+It is commonly used for initializing data or making API calls. 
+This is where the component is considered initialized.
+
+DoCheck: 
+This hook is called during every change detection run. 
+It can be used for custom change detection and additional checks.
+
+AfterContentInit: 
+This is called after the content (projected content from child components) has been initialized.
+
+AfterContentChecked: 
+This is called after every check of the content (projected content from child components). 
+It can be used for additional checks or operations related to the content.
+
+Child Component:
+----------------
+OnInit : 
+The child component's ngOnInit is called after the parent component's ngOnInit. 
+This is because the child components are initialized after their parent.
+
+AfterContentInit : 
+If the child component has projected content (ng-content), this hook is called after the parent's AfterContentInit.
+
+AfterContentChecked : 
+Called after the content (projected content from child components) has been checked.
+
+AfterViewInit: 
+This is called after the child component's view has been initialized. 
+It's important to note that the parent's view may not be initialized at this point.
+
+AfterViewChecked:
+ Called after every check of the child component's view.
+
+Cleanup:
+OnDestroy (ngOnDestroy): This is called just before the component is destroyed. 
+It's used for cleanup activities such as unsubscribing from observables to prevent memory leaks.

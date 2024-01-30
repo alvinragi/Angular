@@ -1,0 +1,34 @@
+spec.ts file for unit testing
+
+component.ts is the most important file with the classes
+
+package.json keeps list of the packages
+
+git ignore file keeps list of all the files thats not supposed to be pushed.
+
+to run app - ng serve
+to create a component - ng g c componentname
+
+entry point - main.ts file
+main will go to appconfig.ts
+
+//angular will add new component into declaration as we create
+
+then it will go into appcomponent.ts
+
+//so it is ts will decide what will come in view, css etc
+
+decorator will supply metadata, which helps angular to know the component of the class
+
+selector gives the tag to be used in html file (index.html). the ts file will use this html file to display the componenets
+
+can link multiple style urls
+
+the creation of object is all under the hood. 
+ts creates the object of the item that comes in view
+
+Structural directives are the things that updates the DOM (ngIf)
+
+to display a varibale, we use {{variable name}}
+
+

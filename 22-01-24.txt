@@ -1,0 +1,7 @@
+Blocking routes
+--------------
+
+we can set another property canActivate boolen property to path of routes
+canDeactivate boolean route which can input some logic which will prompt user to go to different route
+resolve can block the route till the data is got
+
