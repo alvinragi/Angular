@@ -1,0 +1,21 @@
+<div class="main-con">
+  <form [formGroup]="editForm">
+    <h4>Post Id : {{ data.id }}</h4>
+    <h5>Title: {{ data.title }}</h5>
+    <textarea
+      id="content"
+      formControlName="content"
+      [(ngModel)]="data.body"
+    ></textarea>
+    <div class="wrong" *ngIf="editForm.get('content')?.hasError('required')">
+      Content is required.
+    </div>
+    <div *ngIf="editForm.get('content')?.hasError('minlength')">
+      Content must be at least 5 characters long.
+    </div>
+
+    <button type="button" (click)="save()" [appDButton]="editForm.invalid">
+      Save
+    </button>
+  </form>
+</div>

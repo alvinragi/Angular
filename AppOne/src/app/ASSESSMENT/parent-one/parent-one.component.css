@@ -1,0 +1,58 @@
+.welcome-container {
+  margin-top: 10px;
+  text-align: center;
+  padding: 20px;
+  margin-left: 300px;
+  max-width: 600px;
+  background-color: #aee7ff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-heading {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.username-text {
+  color: #555;
+  font-size: 18px;
+}
+
+.post-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px auto; /* Center the post cards horizontally */
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  max-width: 800px; /* Set a maximum width for the post cards */
+  width: 100%; /* Make sure the post cards take the full width within the specified max-width */
+}
+
+h2 {
+  color: #333;
+}
+
+h3 {
+  color: #0066cc;
+}
+
+p {
+  color: #666;
+}
+
+.button {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}

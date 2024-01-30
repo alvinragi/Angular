@@ -1,0 +1,36 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="originalString">Enter Original String:</label>
+      <input
+        type="text"
+        id="originalString"
+        name="originalString"
+        [(ngModel)]="originalString"
+        required
+        class="form-control"
+      />
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="transformType">Choose Transformation:</label>
+      <select
+        id="transformType"
+        name="transformType"
+        [(ngModel)]="selectedTransformType"
+        class="form-control"
+      >
+        <option value="small">Small</option>
+        <option value="upper">Upper</option>
+      </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<div *ngIf="reversedString">
+  <div class="container mt-3">
+    <h2>{{ originalString | reverse : selectedTransformType }}</h2>
+  </div>
+</div>

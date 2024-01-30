@@ -1,15 +1,15 @@
 <p>resolve-child works!</p>
 <button (click)="redirectPage()">Go to parent</button>
 
-<!-- The below code is for example of directive -->
-<p>The below is for directive demo</p>
+<!-- The below code is for an example of directive -->
+<p>The below is for the directive demo</p>
 <div appSetBackground style="background-color: saddlebrown">
   <p>Hello</p>
 </div>
 
 <button>directive button</button>
-
-<!-- property binded custom directive -->
-<h1 appPropertyBind [backgroundColor]="backgroundColor" [color]="color">
+<button (click)="toggleText()">Toggle Color Primary</button>
+<!-- property-bound custom directive -->
+<h1 appSetBackground [backgroundColor]="backgroundColor" [color]="color">
   hello
 </h1>

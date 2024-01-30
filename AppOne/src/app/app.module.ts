@@ -20,6 +20,12 @@ import { ResolveChildComponent } from './Resolve_Demo/resolve-child/resolve-chil
 import { ResolveParentComponent } from './Resolve_Demo/resolve-parent/resolve-parent.component';
 import { HttpinterceptorService } from './userIntrfc.service';
 import { SetBackground } from './Resolve_Demo/resolve-child/setbackground.directive';
+import { ChildOneComponent } from './ASSESSMENT/child-one/child-one.component';
+import { ParentOneComponent } from './ASSESSMENT/parent-one/parent-one.component';
+import { EditComponent } from './ASSESSMENT/edit/edit.component';
+import { DButtonDirective } from './d-button.directive';
+import { PipingComponent } from './Pipe_Demo/piping/piping.component';
+import { CustomDatePipe } from './Pipe_Demo/customDate.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +44,12 @@ import { SetBackground } from './Resolve_Demo/resolve-child/setbackground.direct
     ResolveChildComponent,
     ResolveParentComponent,
     SetBackground,
-    
+    ChildOneComponent,
+    ParentOneComponent,
+    EditComponent,
+    DButtonDirective,
+    PipingComponent,
+    CustomDatePipe
   ],
   imports: [
     BrowserModule,
@@ -56,4 +67,6 @@ import { SetBackground } from './Resolve_Demo/resolve-child/setbackground.direct
     },],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {   
+ 
+}

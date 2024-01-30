@@ -1,0 +1,61 @@
+.styled-form {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 110px;
+  border: 2px solid #3498db; /* Updated border color */
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #ecf0f1; /* Updated background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px; /* Slightly increased margin */
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px; /* Slightly increased padding */
+  font-size: 16px;
+  border: 2px solid #bdc3c7; /* Updated border color */
+  border-radius: 6px;
+  background-color: #fff; /* Updated background color */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.form-control:focus {
+  border-color: #3498db; /* Updated border color on focus */
+}
+
+.error-message {
+  color: #e74c3c; /* Error message color */
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
+
+.submit-button {
+  background-color: #2ecc71; /* Updated button color */
+  color: #fff;
+  padding: 12px 20px; /* Slightly increased padding */
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.submit-button:hover {
+  background-color: #27ae60; /* Updated button color on hover */
+}
+
+.submit-button:disabled {
+  background-color: #95a5a6; /* Updated disabled button color */
+  cursor: not-allowed;
+}
